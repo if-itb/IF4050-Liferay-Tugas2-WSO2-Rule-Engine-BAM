@@ -1,0 +1,55 @@
+<ruleService
+        name="GreetingService"
+        xmlns="http://wso2.org/carbon/rules"
+        targetNamespace="http://com.test/greeting">
+    <ruleSet>
+        <rule resourceType="regular" sourceType="inline">
+            <![CDATA[
+                    package greeting
+
+                    import samples.greeting.AmbilKuliah;
+                    import samples.greeting.User;
+
+                    rule "Boleh" no-loop true
+                    when
+                        user : User()
+                        eval((user.getIp() > 3.5) && (user.getSKS() > 20))
+                    then
+                        AmbilKuliah msg = new AmbilKuliah();
+                        msg.setMessage(user.getName() + " boleh mengambil.");
+                        insertLogical(msg);
+                    end
+
+                    rule "Bersyarat" no-loop true
+                    when
+                        user : User()
+                        eval(((user.getIp() > 3) && (user.getIp() < 3.5)) && (user.getSKS() > 20))
+                    then
+                        AmbilKuliah msg = new AmbilKuliah();
+                        msg.setMessage(user.getName() + " mengambil kuliah dengan status bersyarat.");
+                        insertLogical(msg);
+                    end
+
+                    rule "Tidak Boleh" no-loop true
+                    when
+                        user : User()
+                        eval((user.getIp() < 3) && (user.getSKS() > 20))
+                    then
+                        AmbilKuliah msg = new AmbilKuliah();
+                        msg.setMessage(user.getName() + " tidak boleh mengambil kuliah.");
+                        insertLogical(msg);
+                    end
+            ]]>
+        </rule>
+    </ruleSet>
+    <operation name="greetMe">
+        <input wrapperElementName="user" namespace="http://com.test/greeting">
+            <fact elementName="user" namespace="http://com.test/greeting" type="samples.greeting.User"></fact>
+        </input>
+        <output wrapperElementName="AmbilKuliah" namespace="http://com.test/greeting">
+            <fact elementName="AmbilKuliah" namespace="http://com.test/greeting" type="samples.greeting.AmbilKuliah"></fact>
+        </output>
+    </operation>
+</ruleService>
+
+
