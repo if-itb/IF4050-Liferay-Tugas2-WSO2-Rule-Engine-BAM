@@ -13,7 +13,7 @@ Setiap bisnis memiliki jenis sistem yang berbeda untuk mengatur operasi. WSO2 BR
 
 Dalam pengambilan SKS, kita perlu mempertimbangkan sks yang sudah diambil dan ipk dari mahasiswa. Service ini digunakan untuk menentukan apakah mahasiswa tersebut boleh mengambil kuliah.
 
-## Code Struktur
+## Struktur Kode
 
   |__ rule
      |__ greeting.service
@@ -24,3 +24,7 @@ Dalam pengambilan SKS, kita perlu mempertimbangkan sks yang sudah diambil dan ip
               |__ User.java
       |__ service
       |__ build.xml
+
+## Screenshot
+
+![Kuliah Service Test](https://lh3.googleusercontent.com/-sHcIF5fOKaU/VH6-8Nm8SvI/AAAAAAAABE4/-E7DqxhP8ls/s0/Capture.JPG "KuliahService Test")
