@@ -156,6 +156,7 @@ Selanjutnya untuk menentukan rule kita bisa mengedit file service.rsl pada folde
 Pada rule di atas ada tiga state output dari rule yaitu `Boleh`, `Bersyarat`, dan `Tidak Boleh` mengambil mata kuliah.
 File ini sebenearnya berformat xml namun dengan ruleset yang bisa mengakses atribut dari kelas interface java `User.java` yang sudah kita buat.
 
+
 ## Pengujian
 
 Salah satu contoh kasus yang kita coba adalah memberikan input sebagai berikut :
