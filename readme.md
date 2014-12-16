@@ -109,7 +109,9 @@ Setiap bisnis memiliki jenis sistem yang berbeda untuk mengatur operasi. WSO2 BR
 
 ![Architecture](http://image.slidesharecdn.com/practicalsoaforthesolutionarchitectv03-111206030915-phpapp02/95/practical-soa-for-the-solution-architect-12-728.jpg?cb=1323224297)
 
-Rule Server pada WSO2 termasuk business services yang mempunyai kategori yang sama dengan Complex Event Processing Server.
+![archi](https://lh5.googleusercontent.com/-SlXnzLTr1J8/VH7eophYHrI/AAAAAAAABFM/usNJwhLP5lw/s0/wso2_new_platform_diagram.jpg "wso2_new_platform_diagram.jpg")
+
+Rule Server pada WSO2 termasuk business services.
 
 ## Kuliah Service Example
 
@@ -156,7 +158,6 @@ Selanjutnya untuk menentukan rule kita bisa mengedit file service.rsl pada folde
 Pada rule di atas ada tiga state output dari rule yaitu `Boleh`, `Bersyarat`, dan `Tidak Boleh` mengambil mata kuliah.
 File ini sebenearnya berformat xml namun dengan ruleset yang bisa mengakses atribut dari kelas interface java `User.java` yang sudah kita buat.
 
-
 ## Pengujian
 
 Salah satu contoh kasus yang kita coba adalah memberikan input sebagai berikut :
@@ -171,3 +172,8 @@ output yang dihasilkan adalah
         sahe mengambil kuliah dengan status bersyarat 
 
 ![Kuliah Service Test](https://lh3.googleusercontent.com/-sHcIF5fOKaU/VH6-8Nm8SvI/AAAAAAAABE4/-E7DqxhP8ls/s0/Capture.JPG "KuliahService Test")
+
+## Links
+
+https://docs.wso2.com/display/BAM250/Service+Statistics+Toolbox
+https://docs.wso2.com/display/BRS210/Greeting+Service
