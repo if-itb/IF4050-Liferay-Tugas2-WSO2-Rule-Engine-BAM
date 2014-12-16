@@ -160,13 +160,13 @@ File ini sebenearnya berformat xml namun dengan ruleset yang bisa mengakses atri
 
 Salah satu contoh kasus yang kita coba adalah memberikan input sebagai berikut :
 
-  SKS : 25
-  IP : 3.25
-  name : sahe
-  nim : 13511046
+        SKS : 25
+        IP : 3.25
+        name : sahe
+        nim : 13511046
 
 output yang dihasilkan adalah
 
-  sahe mengambil kuliah dengan status bersyarat 
+        sahe mengambil kuliah dengan status bersyarat 
 
 ![Kuliah Service Test](https://lh3.googleusercontent.com/-sHcIF5fOKaU/VH6-8Nm8SvI/AAAAAAAABE4/-E7DqxhP8ls/s0/Capture.JPG "KuliahService Test")
