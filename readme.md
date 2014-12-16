@@ -107,10 +107,9 @@ Rule Engine
 
 Setiap bisnis memiliki jenis sistem yang berbeda untuk mengatur operasi. WSO2 BRS memungkinan kita untuk menulis, me-mantain dan mengekspos business rule sebagai service.
 
-## Installation
+![Architecture](http://image.slidesharecdn.com/practicalsoaforthesolutionarchitectv03-111206030915-phpapp02/95/practical-soa-for-the-solution-architect-12-728.jpg?cb=1323224297)
 
- 1. Download the WSO2 Business Rules Server
- 2. Run the executable in the folder bin/wso2server.bat
+Rule Server pada WSO2 termasuk business services yang mempunyai kategori yang sama dengan Complex Event Processing Server.
 
 ## Kuliah Service Example
 
@@ -118,16 +117,56 @@ Dalam pengambilan SKS, kita perlu mempertimbangkan sks yang sudah diambil dan ip
 
 ## Struktur Kode
 
-  |__ rule
-     |__ greeting.service
-        |__ build
-        |__ facts
-           |__ src\main\java\samples\greeting
-              |__ AmbilKuliah.java
-              |__ User.java
-      |__ service
-      |__ build.xml
+        |__ rule
+          |__ greeting.service
+          |__ build
+          |__ facts\src\main\java\samples\greeting
+            |__ AmbilKuliah.java
+            |__ User.java
+          |__ service
+            |__ META-INF
+              |__ service.rsl
+          |__ build.xml
 
-## Screenshot
+## Installation
+
+ 1. Unduh WSO2 Business Rules Server [disini](http://wso2.com/products/business-rules-server/)
+ 2. Copy folder rule ke wso2brs/samples/greeting.service
+ 3. Jalankan executable pada folder bin/wso2server.bat
+ 4. buka alamat yang tertera pada console melalui browser
+
+![alamat](https://lh6.googleusercontent.com/-7UDlZbO-h-0/VJB8tYHQHBI/AAAAAAAABKI/0UwzR2LHE9Q/s0/Capture.JPG "Alamat")
+
+ 5. login (default user : admin, password : admin)
+ 6. Pilih menu services > List lalu akan muncul GreetingService
+ 7. Pilih menu Try this service
+
+![menu](https://lh3.googleusercontent.com/-e4SzOGewX7I/VJB9YD6KDNI/AAAAAAAABKY/mcwUuALxqaA/s0/Capture.JPG "menu")
+
+## Rule Service
+
+Pada folder facts di greeting.service terdapat dua file java yaitu `User.java` dan `AmbilKuliah.java`. `User.java` digunakan untuk membuat kelas User dalam kasus ini adalah Mahasiswa beserta atribut-atribut yang bisa diakses. Lalu AmbilKuliah hanya merupakan Message output dari rule kita.
+
+ ![source](https://lh3.googleusercontent.com/-ChZ5XjWbI8c/VJB-j7cPQDI/AAAAAAAABKw/LokaAuHXwEo/s0/Capture.JPG "source")
+
+Selanjutnya untuk menentukan rule kita bisa mengedit file service.rsl pada folder service
+
+![enter image description here](https://lh4.googleusercontent.com/-wHIW8I9o6Ms/VJB_IXaq23I/AAAAAAAABLA/2pGNt_t1MYQ/s0/Capture.JPG "services")
+
+Pada rule di atas ada tiga state output dari rule yaitu `Boleh`, `Bersyarat`, dan `Tidak Boleh` mengambil mata kuliah.
+File ini sebenearnya berformat xml namun dengan ruleset yang bisa mengakses atribut dari kelas interface java `User.java` yang sudah kita buat.
+
+## Pengujian
+
+Salah satu contoh kasus yang kita coba adalah memberikan input sebagai berikut :
+
+  SKS : 25
+  IP : 3.25
+  name : sahe
+  nim : 13511046
+
+output yang dihasilkan adalah
+
+  sahe mengambil kuliah dengan status bersyarat 
 
 ![Kuliah Service Test](https://lh3.googleusercontent.com/-sHcIF5fOKaU/VH6-8Nm8SvI/AAAAAAAABE4/-E7DqxhP8ls/s0/Capture.JPG "KuliahService Test")
